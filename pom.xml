@@ -17,6 +17,9 @@
         <java.version>17</java.version>
         <telegrambots.version>6.1.0</telegrambots.version>
         <lombok.version>1.18.24</lombok.version>
+        <version.spring-boot-starter-logging>3.0.1</version.spring-boot-starter-logging>
+        <version.spring-boot-starter-data-jpa>3.0.1</version.spring-boot-starter-data-jpa>
+        <version.postgresql>42.3.1</version.postgresql>
     </properties>
     <dependencies>
         <dependency>
@@ -46,19 +49,30 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
-            <version>3.0.1</version>
+            <version>${version.spring-boot-starter-logging}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${version.spring-boot-starter-data-jpa}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${version.postgresql}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -66,7 +80,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration><executable>true</executable></configuration>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
 
             </plugin>
         </plugins>
